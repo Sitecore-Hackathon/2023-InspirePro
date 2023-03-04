@@ -21,6 +21,8 @@ namespace SitecoreHackathon23
     public static class ReviewWorkflow
     {
         private static readonly HttpClient HttpClient = new HttpClient();
+        private static readonly string AzureFunction_Approve_URL = Environment.GetEnvironmentVariable("AzureFunction_Approve_URL");
+        private static readonly string AzureFunction_Reject_URL = Environment.GetEnvironmentVariable("AzureFunction_Reject_URL");
         [FunctionName("ReviewWorkflow")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
@@ -37,7 +39,8 @@ namespace SitecoreHackathon23
 
 
             // Create Team's Message
-            string teammessage = "{\"@type\":\"MessageCard\",\"@context\":\"http://schema.org/extensions\",\"themeColor\":\"0076D7\",\"summary\":\"Sitecore Hackathon'23-Team InspirePro\",\"sections\":[{\"activityTitle\":\"Review Work flow Item\",\"activitySubtitle\":\"On Project Tango\",\"activityImage\":\"https://teamsnodesample.azurewebsites.net/static/img/image5.png\",\"facts\":[{\"name\":\"Item Name\",\"value\":\"" + itenname + "\"},{\"name\":\"Item ID\",\"value\":\"" + itemid + "\"},{\"name\":\"Current Workflow State\",\"value\":\"Awaiting for review\"}],\"markdown\":true}],\"potentialAction\":[{\"@type\":\"OpenUri\",\"name\":\"Approve\",\"targets\":[{\"os\":\"default\",\"uri\":\"http://localhost:7071/api/Approve?itemid=" + itemid + "\"}]},{\"@type\":\"OpenUri\",\"name\":\"Reject\",\"targets\":[{\"os\":\"default\",\"uri\":\"http://localhost:7071/api/Reject?itemid=" + itemid + "\"}]}]}";
+            string teammessage = "{\"@type\":\"MessageCard\",\"@context\":\"http://schema.org/extensions\",\"themeColor\":\"0076D7\",\"summary\":\"Sitecore Hackathon'23-Team InspirePro\",\"sections\":[{\"activityTitle\":\"Review Work flow Item\",\"activitySubtitle\":\"On Project Tango\",\"activityImage\":\"https://teamsnodesample.azurewebsites.net/static/img/image5.png\",\"facts\":[{\"name\":\"Item Name\",\"value\":\"" + itenname + "\"},{\"name\":\"Item ID\",\"value\":\"" + itemid + "\"},{\"name\":\"Current Workflow State\",\"value\":\"Awaiting for review\"}],\"markdown\":true}],\"potentialAction\":[{\"@type\":\"OpenUri\",\"name\":\"Approve\",\"targets\":[{\"os\":\"default\",\"uri\":\""+AzureFunction_Approve_URL+"&itemid=" + itemid + "\"}]},{\"@type\":\"OpenUri\",\"name\":\"Reject\",\"targets\":[{\"os\":\"default\",\"uri\":\""+AzureFunction_Reject_URL+"&itemid=" + itemid + "\"}]}]}";
+            
             dynamic data2 = JsonConvert.DeserializeObject(teammessage);
 
             // Send mesasage to Teams using Webhook
