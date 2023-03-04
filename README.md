@@ -20,9 +20,8 @@
   
   - What problem was solved (if any) - With this module, Business will be having a common MS Team channel with all authorized Content Publisher members only. And based on action triggered on Channel for that item - workflow state will be changed - without going and login into Sitecore.
   
-    - How does this module solve it - We have created webhook item in Sitecore to trigger on item_saved event with rule - Item must be in awaiting approval state. Based on webhook request from Sitecore - we have written azure function to do push notification on MS Team and on user action (accept/reject) on MS Teams, we are updating Item workflow State using Sitecore Item Rest API.
+    - How does this module solve it - We have created webhook item in Sitecore to trigger on item_saved event with rule - Item must be in awaiting approval state. Based on webhook request from Sitecore - we have written azure function to do push notification on MS Team and on user action (accept/reject) on MS Teams, we are updating Item workflow State using Sitecore Item Rest API. Future Extensibility - This module is not limited to only MS Teams integration, we can also integrate with Slack/WhatsApp or any Professional Communication channel.
 
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
 
 ## Video link
 
@@ -35,9 +34,8 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 ⟹ Does your module rely on other Sitecore modules or frameworks?
 
 - List any dependencies
-- Azure function to get sitecore webhook request.
+- Sitecore XM Cloud subscription access
 - To get push notification configured MS Teams Channel with incoming webhook.
-- Sitecore Item Restful API to update workflow state.
 
 
 
@@ -45,18 +43,17 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 ⟹ Write a short clear step-wise instruction on how to install your module.  
 
 > Steps to setup XM Cloud Sitecore Project:
-> - Deploy a XM cloud using our base repo. https://github.com/sitecorelabs/xmcloud-foundation-head
-> - Install the sitecore package
-> - Set Up azure function (optional) --> you can use our azure function URL or Check out the code and deploy on azure
-> - Set up MS Teams webbook
-> - Give the team webbook url in azure
-> - Give the XM cloud URL in azure.
-> - Give admin user name and password in azure
-
- 
-for example:
-
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
+> - Deploy a XM cloud using Sitecore base repo. https://github.com/sitecorelabs/xmcloud-foundation-head
+> - Download and install the Sitecore package ./docs/Webhook.zip into your Sitecore instance
+> 
+> Set up MS Teams webbook from Microsoft Official documentation https://www.microsoft.com/en-us/videoplayer/embed/RE4ODcY?postJsllMsg=true
+> - Copy and note down incoming webhook URL, we will use in next step
+> 
+> Set Up azure function
+> - Check out the code from main branch and deploy SitecoreHackathon23 project on azure function
+> - Go to setting > configuration node in azure function app on Portal and create below highlighted application settings.
+![azure-function-application-settings.png](docs/images/azure-function-application-settings.png?raw=true "azure-function-application-settings.png")
+> 
 
 
 ### Configuration
@@ -70,6 +67,8 @@ _Remove this subsection if your entry does not require any configuration that is
 ![flow-diagram.png](docs/images/flow-diagram.png?raw=true "flow-diagram.png")
 ![sitecore-to-ms-teams-code-flow.png](docs/images/sitecore-to-ms-teams-code-flow.png?raw=true "sitecore-to-ms-teams-code-flow.png")
 ![sitecore-webhook-item.png](docs/images/sitecore-webhook-item.png?raw=true "sitecore-webhook-item.png")
+
+
 
 
 
