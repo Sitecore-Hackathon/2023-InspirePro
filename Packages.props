@@ -15,5 +15,7 @@
     <PackageReference Update="Sitecore.XmCloud.LayoutService" Version="$(PlatformVersion)" />
     <PackageReference Update="Sitecore.XmCloud.Assemblies" Version="$(PlatformVersion)" />
     <PackageReference Update="Sitecore.Assemblies.SitecoreHeadlessServicesServer" Version="19.*" />
+	<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.1.1" />
+	<PackageReference Include="MessageCardModel" Version="1.1.4" />
   </ItemGroup>
 </Project>
