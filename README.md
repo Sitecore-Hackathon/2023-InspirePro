@@ -16,11 +16,11 @@
 ## Description
 ⟹ Write a clear description of your hackathon entry.  
 
-  - Module Purpose - To get Sitecore changed Item (awaiting approval) workflow notification on MS Team and update their workflow state based on action (accept/reject) from MS Teams without Sitecore Login.
+  - Module Purpose - To get Sitecore changed Item (awaiting approval) workflow notification on MS Team and update their workflow state based on action (approve/reject) from MS Teams without Sitecore Login.
   
   - What problem was solved (if any) - With this module, Business will be having a common MS Team channel with all authorized Content Publisher members only. And based on action triggered on Channel for that item - workflow state will be changed - without going and login into Sitecore.
   
-    - How does this module solve it - We have created webhook item in Sitecore to trigger on item_saved event with rule - Item must be in awaiting approval state. Based on webhook request from Sitecore - we have written azure function to do push notification on MS Team and on user action (accept/reject) on MS Teams, we are updating Item workflow State using Sitecore Item Rest API. Future Extensibility - This module is not limited to only MS Teams integration, we can also integrate with Slack/WhatsApp or any Professional Communication channel.
+    - How does this module solve it - We have created webhook item in Sitecore to trigger on item_saved event with rule - Item must be in awaiting approval state. Based on webhook request from Sitecore - we have written azure function to do push notification on MS Team and on user action (approve/reject) on MS Teams, we are updating Item workflow State using Sitecore Item Rest API. Future Extensibility - This module is not limited to only MS Teams integration, we can also integrate with Slack/WhatsApp or any Professional Communication channel.
 
 
 ## Video link
@@ -46,7 +46,7 @@
 > - Deploy a XM cloud using Sitecore base repo. https://github.com/sitecorelabs/xmcloud-foundation-head
 > - Download and install the Sitecore package ./docs/Webhook.zip into your Sitecore instance
 > 
-> Set up MS Teams webbook from Microsoft Official documentation https://www.microsoft.com/en-us/videoplayer/embed/RE4ODcY?postJsllMsg=true
+> Set up MS Teams webhook from Microsoft Official documentation https://www.microsoft.com/en-us/videoplayer/embed/RE4ODcY?postJsllMsg=true
 > - Copy and note down incoming webhook URL, we will use in next step
 > 
 > Set Up azure function
@@ -59,16 +59,26 @@
 ### Configuration
 ⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
 
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
-
 ## Usage instructions
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
 
+About Module - 
+With this module, On MS Team user will be having Content Publisher Channel where they will get push notification about workflow approval or rejection request.
+
+Below is the high level flow diagram 
 ![flow-diagram.png](docs/images/flow-diagram.png?raw=true "flow-diagram.png")
+
+With Sitecore code flow will looks like below
 ![sitecore-to-ms-teams-code-flow.png](docs/images/sitecore-to-ms-teams-code-flow.png?raw=true "sitecore-to-ms-teams-code-flow.png")
+
+How to use module - 
+1. Once done Sitecore Project setup and installed package as above instructed.
+2. review and update Sitecore webhook item's Url value as per your azure function like below
 ![sitecore-webhook-item.png](docs/images/sitecore-webhook-item.png?raw=true "sitecore-webhook-item.png")
-
-
+3. Now update any Sitecore Item field value and save. (Workflow must be applied on Item).
+4. Once saved clicked, you will get push notification on team as below
+![ms-teams-sitecore-workflow-push-notificaiton.png](docs/images/ms-teams-sitecore-workflow-push-notificaiton.png?raw=true "ms-teams-sitecore-workflow-push-notificaiton.png")
+5. Based on action selection approve or reject, workflow will be updated on item in Sitecore with login into Sitecore.
 
 
 
