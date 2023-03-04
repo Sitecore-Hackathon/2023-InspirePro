@@ -1,0 +1,12 @@
+{
+	"namespace": "Project.Hackathon23",
+	"items": {
+    "includes": [
+      {
+        "name": "Webhooks",
+        "path": "/sitecore/system/Webhooks",
+        "AllowedPushOperations": "createUpdateAndDelete"
+      }
+       ]
+	}
+}
