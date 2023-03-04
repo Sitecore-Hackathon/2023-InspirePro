@@ -78,7 +78,7 @@ How to use module -
 3. Now update any Sitecore Item field value and save. (Workflow must be applied on Item).
 4. Once saved clicked, you will get push notification on team as below
 ![ms-teams-sitecore-workflow-push-notificaiton.png](docs/images/ms-teams-sitecore-workflow-push-notificaiton.png?raw=true "ms-teams-sitecore-workflow-push-notificaiton.png")
-5. Based on action selection approve or reject, workflow will be updated on item in Sitecore with login into Sitecore.
+5. Based on action selection approve or reject, workflow will be updated on item without login into Sitecore.
 
 
 
