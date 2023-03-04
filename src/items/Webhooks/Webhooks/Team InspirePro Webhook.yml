@@ -1,0 +1,59 @@
+﻿---
+ID: "31dd705d-01cd-4174-be39-12e65175def8"
+Parent: "7d2fa73d-6ae7-47cb-8d0b-d64671768c82"
+Template: "f05212ce-30a7-4733-a7f4-ed6e13f26692"
+Path: /sitecore/system/Webhooks/Team InspirePro Webhook
+SharedFields:
+- ID: "70bcf39c-e567-4bc5-9dfa-3503810ef820"
+  Hint: Enabled
+  Value: 1
+- ID: "81ad5a23-de34-4ff2-9276-035230250a37"
+  Hint: Events
+  Value: "{10F78F45-7C58-4753-A09E-41D890EA2A2B}"
+- ID: "98573c19-16c4-4c15-9cb2-355834914061"
+  Hint: Rule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{3F08253D-1782-403F-9F25-63BD16B85968}">
+        <conditions>
+          <condition
+            id="{39F88BFF-2B06-4BEE-859B-66C264AE3F6D}"
+            uid="2820051CCD9B4416A6795FB99078534D"
+            workflowstateid="{46DA5376-10DC-4B66-B464-AFDAA29DE84F}" />
+        </conditions>
+      </rule>
+    </ruleset>
+- ID: "f9f59338-045d-4da8-80f0-ce7f7d92e4af"
+  Hint: Url
+  Value: "https://sitecorehackathon2320230304103030.azurewebsites.net/api/Function1?code=agcqrnbh3iKJBV7khu8YVF9OMoP7mOrujBnmPjcWtnLTAzFuEdqGPw=="
+Languages:
+- Language: en
+  Fields:
+  - ID: "305fa64b-5785-4171-aa73-de715e21ae21"
+    Hint: Description
+    Value: Team InspirePro Webhook to Review the workflow items
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230304T023331Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\raman.gupta@espire.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\raman.gupta@espire.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bdc5e14f-8a2c-465e-b4bc-758363629f07"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\raman.gupta@espire.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230304T141739Z
