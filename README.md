@@ -68,7 +68,7 @@ With this module, On MS Team user will be having Content Publisher Channel where
 Below is the high level flow diagram 
 ![flow-diagram.png](docs/images/flow-diagram.png?raw=true "flow-diagram.png")
 
-With Sitecore code flow will looks like below
+With Sitecore - code flow will looks like below
 ![sitecore-to-ms-teams-code-flow.png](docs/images/sitecore-to-ms-teams-code-flow.png?raw=true "sitecore-to-ms-teams-code-flow.png")
 
 How to use module - 
