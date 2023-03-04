@@ -25,7 +25,7 @@
 
 ## Video link
 
-⟹ [Video link](#https://www.youtube.com/watch?v=sqDcUFAUeAw)
+⟹ https://www.youtube.com/watch?v=sqDcUFAUeAw
 
 
 
