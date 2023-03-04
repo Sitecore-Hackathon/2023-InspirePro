@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{2C5C4D71-0C19-45AE-87C5-96EF199F79E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitecoreHackathon23", "src\Project\SitecoreHackathon23\SitecoreHackathon23.csproj", "{0900185D-ABDE-444C-BEBF-2AB71E1F4DD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SitecoreHackathon23", "src\Project\SitecoreHackathon23\SitecoreHackathon23.csproj", "{0900185D-ABDE-444C-BEBF-2AB71E1F4DD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
